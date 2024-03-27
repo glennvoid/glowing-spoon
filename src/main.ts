@@ -1,14 +1,14 @@
 import { defineCustomElement } from "./lib/apiCustomElement"
 // vue SFC
-import ButtonSFC from './Button.ce.vue'
+import ButtonSFC from '@/components/ui/button/Button.vue'
 // turn component into web components
-export const Counter = defineCustomElement(ButtonSFC, { shadowRoot: false })
+export const Button = defineCustomElement(ButtonSFC, { shadowRoot: false })
 
-customElements.define("my-counter", Counter)
+customElements.define("vce-button", Button)
 
 // register global typings
 declare module 'vue' {
     export interface GlobalComponents {
-        'Counter': typeof Counter,
+        'Button': typeof Button,
     }
 }
